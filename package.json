@@ -1,7 +1,7 @@
 {
   "name": "midiproxy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Indicate MPD232 pots values by changing buttons state",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
