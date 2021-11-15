@@ -39,6 +39,7 @@ input.on(
     const [type, number, value] = message;
     if (type !== TYPE_CC) return;
 
+    // indicate buttons by knob value
     if ([11, 12, 13, 14, 15, 16, 17, 18].includes(number)) {
       output.sendMessage([TYPE_CC, 41, value > 0 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 42, value > 16 ? 127 : 0]);
@@ -49,7 +50,7 @@ input.on(
       output.sendMessage([TYPE_CC, 47, value > 96 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 48, value > 112 ? 127 : 0]);
     }
-    if ([22, 22, 23, 24, 25, 26, 27, 28].includes(number)) {
+    if ([21, 22, 23, 24, 25, 26, 27, 28].includes(number)) {
       output.sendMessage([TYPE_CC, 51, value > 0 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 52, value > 16 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 53, value > 32 ? 127 : 0]);
@@ -59,7 +60,7 @@ input.on(
       output.sendMessage([TYPE_CC, 57, value > 96 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 58, value > 112 ? 127 : 0]);
     }
-    if ([33, 32, 33, 34, 35, 36, 37, 38].includes(number)) {
+    if ([31, 32, 33, 34, 35, 36, 37, 38].includes(number)) {
       output.sendMessage([TYPE_CC, 61, value > 0 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 62, value > 16 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 63, value > 32 ? 127 : 0]);
@@ -68,6 +69,38 @@ input.on(
       output.sendMessage([TYPE_CC, 66, value > 80 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 67, value > 96 ? 127 : 0]);
       output.sendMessage([TYPE_CC, 68, value > 112 ? 127 : 0]);
+    }
+
+    // reset buttons highlighting when press button
+    if ([41, 42, 43, 44, 45, 46, 47, 48].includes(number)) {
+      output.sendMessage([TYPE_CC, 41, 0]);
+      output.sendMessage([TYPE_CC, 42, 0]);
+      output.sendMessage([TYPE_CC, 43, 0]);
+      output.sendMessage([TYPE_CC, 44, 0]);
+      output.sendMessage([TYPE_CC, 45, 0]);
+      output.sendMessage([TYPE_CC, 46, 0]);
+      output.sendMessage([TYPE_CC, 47, 0]);
+      output.sendMessage([TYPE_CC, 48, 0]);
+    }
+    if ([51, 52, 53, 54, 55, 56, 57, 58].includes(number)) {
+      output.sendMessage([TYPE_CC, 51, 0]);
+      output.sendMessage([TYPE_CC, 52, 0]);
+      output.sendMessage([TYPE_CC, 53, 0]);
+      output.sendMessage([TYPE_CC, 54, 0]);
+      output.sendMessage([TYPE_CC, 55, 0]);
+      output.sendMessage([TYPE_CC, 56, 0]);
+      output.sendMessage([TYPE_CC, 57, 0]);
+      output.sendMessage([TYPE_CC, 58, 0]);
+    }
+    if ([61, 62, 63, 64, 65, 66, 67, 68].includes(number)) {
+      output.sendMessage([TYPE_CC, 51, 0]);
+      output.sendMessage([TYPE_CC, 52, 0]);
+      output.sendMessage([TYPE_CC, 53, 0]);
+      output.sendMessage([TYPE_CC, 54, 0]);
+      output.sendMessage([TYPE_CC, 55, 0]);
+      output.sendMessage([TYPE_CC, 56, 0]);
+      output.sendMessage([TYPE_CC, 57, 0]);
+      output.sendMessage([TYPE_CC, 58, 0]);
     }
     console.log(`${number} ${value}`);
   }, 150),
