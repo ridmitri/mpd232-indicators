@@ -73,34 +73,28 @@ input.on(
 
     // reset buttons highlighting when press button
     if ([41, 42, 43, 44, 45, 46, 47, 48].includes(number)) {
-      output.sendMessage([TYPE_CC, 41, 0]);
-      output.sendMessage([TYPE_CC, 42, 0]);
-      output.sendMessage([TYPE_CC, 43, 0]);
-      output.sendMessage([TYPE_CC, 44, 0]);
-      output.sendMessage([TYPE_CC, 45, 0]);
-      output.sendMessage([TYPE_CC, 46, 0]);
-      output.sendMessage([TYPE_CC, 47, 0]);
-      output.sendMessage([TYPE_CC, 48, 0]);
-    }
-    if ([51, 52, 53, 54, 55, 56, 57, 58].includes(number)) {
-      output.sendMessage([TYPE_CC, 51, 0]);
-      output.sendMessage([TYPE_CC, 52, 0]);
-      output.sendMessage([TYPE_CC, 53, 0]);
-      output.sendMessage([TYPE_CC, 54, 0]);
-      output.sendMessage([TYPE_CC, 55, 0]);
-      output.sendMessage([TYPE_CC, 56, 0]);
-      output.sendMessage([TYPE_CC, 57, 0]);
-      output.sendMessage([TYPE_CC, 58, 0]);
+      setTimeout(() => {
+        output.sendMessage([TYPE_CC, 41, 0]);
+        output.sendMessage([TYPE_CC, 42, 0]);
+        output.sendMessage([TYPE_CC, 43, 0]);
+        output.sendMessage([TYPE_CC, 44, 0]);
+        output.sendMessage([TYPE_CC, 45, 0]);
+        output.sendMessage([TYPE_CC, 46, 0]);
+        output.sendMessage([TYPE_CC, 47, 0]);
+        output.sendMessage([TYPE_CC, 48, 0]);
+      }, 50);
     }
     if ([61, 62, 63, 64, 65, 66, 67, 68].includes(number)) {
-      output.sendMessage([TYPE_CC, 51, 0]);
-      output.sendMessage([TYPE_CC, 52, 0]);
-      output.sendMessage([TYPE_CC, 53, 0]);
-      output.sendMessage([TYPE_CC, 54, 0]);
-      output.sendMessage([TYPE_CC, 55, 0]);
-      output.sendMessage([TYPE_CC, 56, 0]);
-      output.sendMessage([TYPE_CC, 57, 0]);
-      output.sendMessage([TYPE_CC, 58, 0]);
+      setTimeout(() => {
+        output.sendMessage([TYPE_CC, 61, 0]);
+        output.sendMessage([TYPE_CC, 62, 0]);
+        output.sendMessage([TYPE_CC, 63, 0]);
+        output.sendMessage([TYPE_CC, 64, 0]);
+        output.sendMessage([TYPE_CC, 65, 0]);
+        output.sendMessage([TYPE_CC, 66, 0]);
+        output.sendMessage([TYPE_CC, 67, 0]);
+        output.sendMessage([TYPE_CC, 68, 0]);
+      }, 50);
     }
     console.log(`${number} ${value}`);
   }, 150),
